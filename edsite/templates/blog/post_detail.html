@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+
+<p>
+	<b>{{ post.published_at }}</b>
+</p>
+
+{{ post.content|urlize|linebreaks }}
+
+<h3>{% comment_count post %} Comments</h3>
+
+	{% for comment in post.comment_set.all %}
+		<p>
+			<b>{{ comment.name }} said, </b> 
+			{{ comment.comment }}
+		</p>
+	{% endfor %}
+
+<h3>Leave a Comment</h3>
+
+{% include "blog/comment_form.html" %}
+{% endblock %}

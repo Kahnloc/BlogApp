@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>{{ post.title }}</h1>
+	<h2>Leave a comment</h2>
+	{% include "blog/comment_form.html" %}
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<head>
+	<title>Welcome to Ed's Blog!</title>
+</head>
+<body>
+	<h1>Ed's Blog</h1>
+
+	<img src="{% static "img/pokenyan.jpg" %}" alt="" />
+
+	{% block content %}{% endblock %}
+	
+	<hr />
+
+	<footer>
+		<small>Copyright &copy; {% now "Y" %} Edward Brandt</small>
+	</footer>
+
+</body>
+</html>
