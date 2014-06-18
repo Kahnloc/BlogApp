@@ -16,5 +16,11 @@ urlpatterns = patterns('',
 		name='main_listing'),
 
 	url(r"^album/(\d+)/$", "edsite.blog.views.album",
-		name='album_listing')
+		name='album_listing'),
+
+	url(r"^image/(\d+)/$", "edsite.blog.views.image",
+		name='image_request'),
+
+	url(r"^(\d+)/(full|thumbnails)/$", "edsite.blog.vews.album",
+		name='album')
 )

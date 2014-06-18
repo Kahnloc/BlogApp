@@ -95,7 +95,11 @@ class Image(models.Model):
 		self.thumbnail1.save(thumb_fn, File(open(tf2.name)), save=False)
 		tf2.close()
 
-		
+	def image(request, pk):
+		"""Image page."""
+		img = Image.objects.get(pk=pk)
+		return render_to_response("photo/image.html", dict(image=img, user=request.user,
+			backurl=request.META["HTTP_REFERER"], media_url=MEDIA_URL))	
 
 		super(Image, self).save(*args, ** kwargs)
 
